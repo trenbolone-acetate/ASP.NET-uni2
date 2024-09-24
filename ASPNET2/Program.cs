@@ -47,8 +47,8 @@ switch (choice)
         });
         break;
     case "3":
-        app.MapGet("/", (IConfiguration config) => $"Company: {config.GetValue<string>("company:name")}, " +
-                                               $"number of employees: {config.GetValue<string>("company:employees")}");
+        app.MapGet("/", (IConfiguration config) => $"Company: {config["company:name"]}, " +
+                                               $"number of employees: {config["company:employees"]}");
         break;
     case "4":
         app.MapGet("/", (IConfiguration config) => $"Name: {config["firstName"] + ' ' + config["lastName"]}\n" +
